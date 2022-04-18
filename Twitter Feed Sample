@@ -1,0 +1,30 @@
+
+CREATE TABLE Twitter_Feed (
+id INTEGER PRIMARY KEY AUTOINCREMENT,
+user_id TEXT,
+post_date INTEGER,
+content TEXT,
+likes INTEGER,
+shares INTEGER,
+comments INTEGER);
+
+INSERT INTO Twitter_Feed (user_id, post_date, content, likes, shares, comments) VALUES ("skeleboy360", "01-20-2022", "vibe check????", "500", "350", "2000");
+INSERT INTO Twitter_Feed (user_id, post_date, content, likes, shares, comments) VALUES ("skeleboy360", "1-25-2022", "Robert Pattinson as Batman?? Absolutely iconic. The writing? ehhhhhhhhhh", "786", "5000", "8450");
+INSERT INTO Twitter_Feed (user_id, post_date, content, likes, shares, comments) VALUES ("jasmines_tea", "2-05-2022", "Can't believe no one introduced me to tea blocks sooner??? Absolutely the most relaxing experience ever!", "8000", "9642", "10546");
+INSERT INTO Twitter_Feed (user_id, post_date, content, likes, shares, comments) VALUES ("tony_hawking", "03-15-2022", "Check out my Twitch to see me do some sick stunts in a wind tunnel! Can't miss it", "75364", "97512", "235798");
+
+SELECT * FROM Twitter_Feed;
+
+UPDATE Twitter_Feed SET likes = 25000
+    WHERE id = 3;
+    
+SELECT * FROM Twitter_Feed;
+
+UPDATE Twitter_Feed SET content = "Watch me do some sick stunts in a wind tunnel on YouTube or Twitch! Can't miss this one guys" 
+    WHERE id = 4;
+    
+SELECT * FROM Twitter_Feed;
+
+DELETE FROM Twitter_Feed WHERE id = 1;
+
+SELECT * FROM Twitter_Feed;
