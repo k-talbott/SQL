@@ -1,0 +1,119 @@
+
+CREATE TABLE Fictional_Characters
+(id INTEGER PRIMARY KEY AUTOINCREMENT, fullname TEXT, series TEXT);
+
+INSERT INTO Fictional_Characters (fullname, series) VALUES ("Hannibal Lector", "Hannibal");
+INSERT INTO Fictional_Characters (fullname, series) VALUES ("Will Graham", "Hannibal");
+INSERT INTO Fictional_Characters (fullname, series) VALUES ("Jack Crawford", "Hannibal");
+INSERT INTO Fictional_Characters (fullname, series) VALUES ("Alana Bloom", "Hannibal");
+INSERT INTO Fictional_Characters (fullname, series) VALUES ("Abigail Hobbs", "Hannibal");
+INSERT INTO Fictional_Characters (fullname, series) VALUES ("Freddie Lounds", "Hannibal");
+INSERT INTO Fictional_Characters (fullname, series) VALUES ("Gon Freecss", "Hunter x Hunter");
+INSERT INTO Fictional_Characters (fullname, series) VALUES ("Killua Zoldyk", "Hunter x Hunter");
+INSERT INTO Fictional_Characters (fullname, series) VALUES ("Leorio Paradinight", "Hunter x Hunter");
+INSERT INTO Fictional_Characters (fullname, series) VALUES ("Kurapika", "Hunter x Hunter");
+INSERT INTO Fictional_Characters (fullname, series) VALUES ("Hisoka Morow", "Hunter x Hunter");
+INSERT INTO Fictional_Characters (fullname, series) VALUES ("Illumi Zoldyk", "Hunter x Hunter");
+INSERT INTO Fictional_Characters (fullname, series) VALUES ("William Afton", "Five Nights At Freddy's");
+INSERT INTO Fictional_Characters (fullname, series) VALUES ("Henry Emily", "Five Nights At Freddy's");
+INSERT INTO Fictional_Characters (fullname, series) VALUES ("Michael Afton", "Five Nights At Freddy's");
+INSERT INTO Fictional_Characters (fullname, series) VALUES ("Freddy", "Five Nights At Freddy's");
+INSERT INTO Fictional_Characters (fullname, series) VALUES ("Chica", "Five Nights At Freddy's");
+INSERT INTO Fictional_Characters (fullname, series) VALUES ("Foxy", "Five Nights At Freddy's");
+INSERT INTO Fictional_Characters (fullname, series) VALUES ("Bonnie", "Five Nights At Freddy's");
+
+CREATE TABLE Genres (id INTEGER PRIMARY KEY AUTOINCREMENT, series_name TEXT, genre TEXT);
+
+INSERT INTO Genres (series_name, genre) VALUES ("Hannibal", "Thriller");
+INSERT INTO Genres (series_name, genre) VALUES ("Hunter x Hunter", "Shonen");
+INSERT INTO Genres (series_name, genre) VALUES ("Five Nights At Freddy's", "Horror");
+
+CREATE TABLE Character_Hobbies (id INTEGER PRIMARY KEY AUTOINCREMENT, fullname TEXT, hobby TEXT);
+
+INSERT INTO Character_Hobbies (fullname, hobby) VALUES ("Hannibal Lector", "Cooking");
+INSERT INTO Character_Hobbies (fullname, hobby) VALUES ("Hannibal Lector", "Murder");
+INSERT INTO Character_Hobbies (fullname, hobby) VALUES ("Hannibal Lector", "Psychoanalysis");
+INSERT INTO Character_Hobbies (fullname, hobby) VALUES ("Hannibal", "Theater");
+INSERT INTO Character_Hobbies (fullname, hobby) VALUES ("Will Graham", "Fishing");
+INSERT INTO Character_Hobbies (fullname, hobby) VALUES ("Will Graham", "Playing With Dogs");
+INSERT INTO Character_Hobbies (fullname, hobby) VALUES ("Will Graham", "Psychoanalysis");
+INSERT INTO Character_Hobbies (fullname, hobby) VALUES ("Jack Crawford", "Psychoanalysis");
+INSERT INTO Character_Hobbies (fullname, hobby) VALUES ("Jack Crawford", "Reading");
+INSERT INTO Character_Hobbies (fullname, hobby) VALUES ("Alana Bloom", "Cooking");
+INSERT INTO Character_Hobbies (fullname, hobby) VALUES ("Alana Bloom", "Playing With Dogs");
+INSERT INTO Character_Hobbies (fullname, hobby) VALUES ("Abigail Hobbs", "Hunting");
+INSERT INTO Character_Hobbies (fullname, hobby) VALUES ("Freddie Lounds", "Writing");
+INSERT INTO Character_Hobbies (fullname, hobby) VALUES ("Gon Freecss", "Fishing");
+INSERT INTO Character_Hobbies (fullname, hobby) VALUES ("Gon Freecss", "Hunting");
+INSERT INTO Character_Hobbies (fullname, hobby) VALUES ("Killua Zoldyk", "Murder");
+INSERT INTO Character_Hobbies (fullname, hobby) VALUES ("Killua Zoldyk", "Psychoanalysis");
+INSERT INTO Character_Hobbies (fullname, hobby) VALUES ("Killua Zoldyk", "Hunting");
+INSERT INTO Character_Hobbies (fullname, hobby) VALUES ("Leorio Paradinight", "Drinking");
+INSERT INTO Character_Hobbies (fullname, hobby) VALUES ("Leorio Paradinight", "Practicing Medicine");
+INSERT INTO Character_Hobbies (fullname, hobby) VALUES ("Kurapika", "Murder");
+INSERT INTO Character_Hobbies (fullname, hobby) VALUES ("Hisoka Morow", "Murder");
+INSERT INTO Character_Hobbies (fullname, hobby) VALUES ("Hisoka Morow", "Psychoanalysis");
+INSERT INTO Character_Hobbies (fullname, hobby) VALUES ("Illumi Zoldyk", "Murder");
+INSERT INTO Character_Hobbies (fullname, hobby) VALUES ("Illumi Zoldyk", "Psychoanalysis");
+INSERT INTO Character_Hobbies (fullname, hobby) VALUES ("William Afton", "Murder");
+INSERT INTO Character_Hobbies (fullname, hobby) VALUES ("William Afton", "Theater");
+INSERT INTO Character_Hobbies (fullname, hobby) VALUES ("Henry Emily", "Inventing");
+INSERT INTO Character_Hobbies (fullname, hobby) VALUES ("Michael Afton", "Victim");
+INSERT INTO Character_Hobbies (fullname, hobby) VALUES ("Freddy", "Singing");
+INSERT INTO Character_Hobbies (fullname, hobby) VALUES ("Freddy", "Hunting");
+INSERT INTO Character_Hobbies (fullname, hobby) VALUES ("Chica", "Playing Guitar");
+INSERT INTO Character_Hobbies (fullname, hobby) VALUES ("Chica", "Hunting");
+INSERT INTO Character_Hobbies (fullname, hobby) VALUES ("Foxy", "Hunting");
+INSERT INTO Character_Hobbies (fullname, hobby) VALUES ("Bonnie", "Playing Guitar");
+INSERT INTO Character_Hobbies (fullname, hobby) VALUES ("Bonnie", "Hunting");
+
+SELECT Fictional_Characters.fullname, Character_Hobbies.hobby
+FROM Character_Hobbies
+JOIN Fictional_Characters
+ON Fictional_Characters.fullname = Character_hobbies.fullname;
+
+SELECT Fictional_Characters.fullname, Character_Hobbies.hobby
+FROM Character_Hobbies
+JOIN Fictional_Characters
+ON Fictional_Characters.fullname = Character_Hobbies.fullname
+WHERE Character_Hobbies.hobby = "Murder";
+
+SELECT Fictional_Characters.fullname, Character_Hobbies.hobby
+FROM Character_Hobbies
+JOIN Fictional_Characters
+ON Fictional_Characters.fullname = Character_hobbies.fullname
+WHERE Character_Hobbies.hobby = "Hunting";
+
+CREATE TABLE Character_Alignment (id INTEGER PRIMARY KEY AUTOINCREMENT, fullname TEXT, alignment TEXT);
+
+INSERT INTO Character_Alignment (fullname, alignment) VALUES ("Hannibal Lector", "Lawful Evil");
+INSERT INTO Character_Alignment (fullname, alignment) VALUES ("Will Graham", "Chaotic Neutral");
+INSERT INTO Character_Alignment (fullname, alignment) VALUES ("Jack Crawford", "Chaotic Good");
+INSERT INTO Character_Alignment (fullname, alignment) VALUES ("Alana Bloom", "Lawful Good");
+INSERT INTO Character_Alignment (fullname, alignment) VALUES ("Abigail Hobbs", "True Neutral");
+INSERT INTO Character_Alignment (fullname, alignment) VALUES ("Freddie Lounds", "Chaotic Neutral");
+INSERT INTO Character_Alignment (fullname, alignment) VALUES ("Gon Freecss", "Lawful Neutral");
+INSERT INTO Character_Alignment (fullname, alignment) VALUES ("Killua Zoldyk", "Neutral Good");
+INSERT INTO Character_Alignment (fullname, alignment) VALUES ("Leorio Paradinight", "Lawful Good");
+INSERT INTO Character_Alignment (fullname, alignment) VALUES ("Kurapika","Lawful Evil");
+INSERT INTO Character_Alignment (fullname, alignment) VALUES ("Hisoka Morow", "Chaotic Evil");
+INSERT INTO Character_Alignment (fullname, alignment) VALUES ("Illumi Zoldyk", "Neutral Evil");
+INSERT INTO Character_Alignment (fullname, alignment) VALUES ("Willam Afton", "Chaotic Evil");
+INSERT INTO Character_Alignment (fullname, alignment) VALUES ("Henry Emily", "Neutral Good");
+INSERT INTO Character_Alignment (fullname, alignment) VALUES ("Michael Afton", "Chaotic Neutral");
+INSERT INTO Character_Alignment (fullname, alignment) VALUES ("Freddy", "Lawful Good");
+INSERT INTO Character_Alignment (fullname, alignment) VALUES ("Chica", "True Neutral");
+INSERT INTO Character_Alignment (fullname, alignment) VALUES ("Foxy", "Chaotic Neutral");
+INSERT INTO Character_Alignment (fullname, alignment) VALUES ("Bonnie", "Chaotic Evil");
+
+SELECT fullname, alignment FROM Character_Alignment
+WHERE alignment = "Chaotic Neutral";
+
+SELECT fullname, alignment FROM Character_Alignment
+WHERE alignment = "Lawful Evil";
+
+SELECT fullname, alignment FROM Character_Alignment
+WHERE alignment = "Lawful Neutral";
+
+SELECT fullname, alignment FROM Character_Alignment
+WHERE alignment = "Chaotic Evil";
