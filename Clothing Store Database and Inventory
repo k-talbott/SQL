@@ -1,0 +1,22 @@
+INSERT INTO inventory VALUES (1, "tank_shirt", "active", "small", 20, 10);
+INSERT INTO inventory VALUES (2, "tank_shirt", "active", "medium", 40, 10); 
+INSERT INTO inventory VALUES (3, "tank_shirt", "active", "large", 30, 10);
+INSERT INTO inventory VALUES (4, "tank_shirt", "active", "xl", 20, 10);
+INSERT INTO inventory VALUES (5, "leggings", "active", "small", 25, 15);
+INSERT INTO inventory VALUES (6, "leggings", "active", "medium", 33, 15);
+INSERT INTO inventory VALUES (7, "leggings", "active", "large", 38, 15);
+INSERT INTO inventory VALUES (8, "leggings", "active", "xl", 45, 15);
+INSERT INTO inventory VALUES (9, "sweatshirt", "outerwear", "small", 29, 25);
+INSERT INTO inventory VALUES (10, "sweatshirt", "outerwear", "medium", 12, 25);
+INSERT INTO inventory VALUES (11, "sweatshirt", "outerwear", "large", 45, 25);
+INSERT INTO inventory VALUES (12, "sweatshirt", "outerwear", "xl", 34, 25);
+INSERT INTO inventory VALUES (13, "crew_socks", "essentials", "one_size", 23, 10);
+INSERT INTO inventory VALUES (14, "ball_cap", "accessories", "child", 20, 15);
+INSERT INTO inventory VALUES (15, "ball_cap", "accessories", "adult", 35, 25);
+
+SELECT * FROM inventory
+ORDER BY "price";
+
+SELECT department,
+SUM(quantity) as Inventory FROM inventory
+GROUP BY department;
